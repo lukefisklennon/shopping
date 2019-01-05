@@ -1,0 +1,154 @@
+"#actionBar": {
+	top: 0,
+	backgroundColor: "#2e7d32",
+	width: Ti.UI.FILL,
+	height: 104,
+	elevation: 7,
+	viewShadowColor: "#aaaaaa",
+	viewShadowOffset: {x: 0, y: 1}
+}
+
+"#top": {
+	top: 0,
+	width: Ti.UI.FILL,
+	height: 56
+}
+
+".navButton": {
+	backgroundColor: "#2e7d32",
+	touchEnabled: true,
+	touchFeedback: true,
+	touchFeedbackColor: "#ffffff",
+	width: 48,
+	height: 48,
+	borderRadius: 28
+}
+
+"#menuButton": {
+	left: 4
+}
+
+"#searchButton": {
+	right: 4
+}
+
+"#searchIcon": {
+	font: {
+		fontSize: 26
+	}
+}
+
+"#backButton": {
+	left: 4,
+	opacity: 0,
+	touchEnabled: false
+}
+
+".navIcon": {
+	font: {
+        fontFamily: "Material Icons",
+        fontSize: 24
+    },
+	color: "#ffffff",
+	touchEnabled: false
+}
+
+"#title": {
+	left: 56,
+	color: "#ffffff",
+	font: {
+        fontSize: 20,
+		fontWeight: "semibold"
+    }
+}
+
+"#tabs": {
+	top: 56,
+	width: Ti.UI.FILL,
+	height: 48
+}
+
+".tab": {
+	width: "50%",
+	height: 48,
+	backgroundColor: "#2e7d32",
+	touchEnabled: true,
+	touchFeedback: true,
+	touchFeedbackColor: "#ffffff"
+}
+
+".tabLabel": {
+	color: "#e6e6e6",
+	touchEnabled: false,
+	font: {
+		fontSize: 14
+	}
+}
+
+"#tabLine": {
+	left: 0,
+	bottom: 0,
+	width: "50%",
+	height: 2,
+	backgroundColor: "#ffffff",
+	touchEnabled: false,
+}
+
+"#pages": {
+	top: 104,
+	overScrollMode: Ti.UI.Android.OVER_SCROLL_NEVER
+}
+
+"#fab": {
+	width: 56,
+	height: 56,
+	borderRadius: 28,
+	bottom: 16,
+	right: 16,
+	elevation: 7,
+	viewShadowColor: "#aaaaaa",
+	viewShadowOffset: {x: 0, y: 1}
+}
+
+"#fabRipple": {
+	width: 56,
+	height: 56,
+	backgroundColor: "#2e7d32",
+	touchFeedback: true,
+    touchFeedbackColor: "#ffffff"
+}
+
+"#fabIcon": {
+    font: {
+        fontFamily: "Material Icons",
+        fontSize: 28
+    },
+    color: "white",
+    touchEnabled: false
+}
+
+"#list": {
+	top: 0
+}
+
+"#listTextField": {
+    color: "#000000",
+    left: 52,
+	width: Ti.UI.FILL,
+	borderWidth: 0,
+	borderStyle: Ti.UI.INPUT_BORDERSTYLE_NONE,
+	backgroundColor: "transparent"
+}
+
+"#listIcon": {
+	touchEnabled: true,
+	touchFeedback: true,
+	backgroundColor: "#f2f2f2",
+    width: 50,
+	height: 50,
+	left: 14,
+	font: {
+        fontFamily: "Material Icons",
+        fontSize: 28
+    }
+}

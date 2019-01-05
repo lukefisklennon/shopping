@@ -1,0 +1,61 @@
+<Alloy>
+	<Window backgroundColor="#f2f2f2">
+		<DrawerLayout id="drawer">
+			<LeftView>
+				<View backgroundColor="#ffffff"></View>
+			</LeftView>
+			<CenterView>
+				<View>
+					<View id="actionBar">
+						<View id="top">
+							<View id="menuButton" class="navButton" onClick="navClick">
+								<Label class="navIcon" text="\ue5d2"/>
+							</View>
+							<Label id="title">List</Label>
+							<View id="searchButton" class="navButton" onClick="searchClick">
+								<Label class="navIcon" text="\ue8b6"/>
+							</View>
+
+							<View id="backButton" class="navButton" onClick="navClick">
+								<Label class="navIcon" text="\ue5c4"/>
+							</View>
+						</View>
+						<View id="tabs">
+							<View class="tab" onClick="tabClick">
+								<Label class="tabLabel">LIST</Label>
+							</View>
+							<View class="tab" onClick="tabClick">
+								<Label class="tabLabel">CATALOGUE</Label>
+							</View>
+							<View id="tabLine"/>
+						</View>
+			        </View>
+					<ScrollableView id="pages" onScroll="pagesScroll">
+						<View>
+							<ListView id="list" defaultItemTemplate="template">
+					            <Templates>
+					                <ItemTemplate name="template">
+					                    <Label bindId="icon" id="listIcon"/>
+					                    <TextField bindId="label" id="listTextField"/>
+					                </ItemTemplate>
+					            </Templates>
+					            <ListSection>
+					                <ListItem label:value="Item 1" icon:text="\ue5cd"/>
+					                <ListItem label:value="Item 2" icon:text="\ue5cd"/>
+					            </ListSection>
+					        </ListView>
+						</View>
+						<View>
+							<Label id="debug"></Label>
+						</View>
+					</ScrollableView>
+					<CardView id="fab" onClick="searchClick">
+						<View id="fabRipple">
+							<Label id="fabIcon" text="\ue145"/>
+						</View>
+					</CardView>
+				</View>
+			</CenterView>
+		</DrawerLayout>
+	</Window>
+</Alloy>
