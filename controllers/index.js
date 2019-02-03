@@ -13,12 +13,7 @@ function searchClick() {
 }
 
 function tabClick(event) {
-	setTab($.tabs.children.indexOf(event.source), true, true);
-}
-
-function pagesScroll(event) {
-	setTab(event.currentPage, false, true);
-	$.tabLine.left = event.currentPageAsFloat * $.tabs.size.width / 2;
+	setTab($.tabs.children.indexOf(event.source), true);
 }
 
 window.addEventListener("open", function() {
@@ -26,10 +21,56 @@ window.addEventListener("open", function() {
 	for (var i = 0; i < mainTabs.length; i ++) {
 		mainTabs[i].left = ($.tabs.size.width / mainTabs.length) * i;
 	}
-	setTab(0, true, false);
+	setTab(0, false);
 });
 
 window.open();
+
+var inactiveOpacity = 0.54;
+function pagesScroll(event) {
+	var index = event.currentPage;
+	var position = event.currentPageAsFloat;
+	var exactlyOnPage = (index == position);
+	$.tabLine.left = position * $.tabs.size.width / 2;
+	for (var i = 0; i < mainTabs.length; i++) {
+		var label = mainTabs[i].children[0];
+		if (exactlyOnPage) {
+			if (i == index) {
+				label.opacity = 1;
+			} else {
+				label.opacity = inactiveOpacity;
+			}
+		} else {
+			var floor = Math.floor(position);
+			var ceil = Math.ceil(position);
+			if (i == floor) {
+				label.opacity = distanceToOpacity(position - floor);
+			} else if (i == ceil) {
+				label.opacity = distanceToOpacity(ceil - position);;
+			} else {
+				label.opacity = inactiveOpacity;
+			}
+		}
+	}
+	function distanceToOpacity(distance) {
+		return (1 - inactiveOpacity) * (1 - (distance)) + inactiveOpacity;
+	}
+}
+function setTab(index, animatePages) {
+	for (var i = 0; i < mainTabs.length; i++) {
+		var label = mainTabs[i].children[0];
+		if (i == index) {
+			label.opacity = 1;
+		} else {
+			label.opacity = inactiveOpacity;
+		}
+	}
+	if (animatePages) {
+		$.pages.scrollToView(index);
+	} else {
+		$.pages.currentPage = index;
+	}
+}
 
 function getTabs(view) {
 	var tabs = [];
@@ -39,30 +80,6 @@ function getTabs(view) {
 		tabs.push(children[i]);
 	}
 	return tabs;
-}
-
-var tabAnimationDuration = 100;
-function setTab(index, setPage, animate) {
-	for (var i = 0; i < mainTabs.length; i++) {
-		var label = mainTabs[i].children[0];
-		var color = "#e6e6e6";
-		var opacity = 0.6;
-		if (i == index) {
-			color = "#ffffff";
-			opacity = 1;
-		}
-		if (animate) {
-			label.animate({
-				color: color,
-				opacity: opacity,
-				duration: tabAnimationDuration
-			});
-		} else {
-			label.color = color;
-			label.opacity = opacity;
-		}
-	}
-	if (setPage) $.pages.scrollToView(index);
 }
 
 function show(view) {

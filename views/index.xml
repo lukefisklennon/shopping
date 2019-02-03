@@ -32,9 +32,9 @@
 			        </View>
 					<ScrollableView id="pages" onScroll="pagesScroll">
 						<View>
-							<ListView id="list" defaultItemTemplate="template">
+							<ListView id="list" defaultItemTemplate="item">
 					            <Templates>
-					                <ItemTemplate name="template">
+					                <ItemTemplate name="item">
 					                    <Label bindId="icon" id="listIcon"/>
 					                    <TextField bindId="label" id="listTextField"/>
 					                </ItemTemplate>
@@ -42,6 +42,22 @@
 					            <ListSection>
 					                <ListItem label:value="Item 1" icon:text="\ue5cd"/>
 					                <ListItem label:value="Item 2" icon:text="\ue5cd"/>
+									<ListItem label:value="Item 3" icon:text="\ue5cd"/>
+					                <ListItem label:value="Item 4" icon:text="\ue5cd"/>
+									<ListItem label:value="Item 5" icon:text="\ue5cd"/>
+					                <ListItem label:value="Item 6" icon:text="\ue5cd"/>
+									<ListItem label:value="Item 7" icon:text="\ue5cd"/>
+					                <ListItem label:value="Item 8" icon:text="\ue5cd"/>
+									<ListItem label:value="Item 9" icon:text="\ue5cd"/>
+					                <ListItem label:value="Item 10" icon:text="\ue5cd"/>
+									<ListItem label:value="Item 11" icon:text="\ue5cd"/>
+					                <ListItem label:value="Item 12" icon:text="\ue5cd"/>
+									<ListItem label:value="Item 13" icon:text="\ue5cd"/>
+					                <ListItem label:value="Item 14" icon:text="\ue5cd"/>
+									<ListItem label:value="Item 15" icon:text="\ue5cd"/>
+					                <ListItem label:value="Item 16" icon:text="\ue5cd"/>
+									<ListItem label:value="Item 17" icon:text="\ue5cd"/>
+					                <ListItem label:value="Item 18" icon:text="\ue5cd"/>
 					            </ListSection>
 					        </ListView>
 						</View>

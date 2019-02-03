@@ -78,7 +78,8 @@
 }
 
 ".tabLabel": {
-	color: "#e6e6e6",
+	color: "#ffffff",
+	opacity: 0.54,
 	touchEnabled: false,
 	font: {
 		fontSize: 14
